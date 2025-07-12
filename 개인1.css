@@ -1,0 +1,100 @@
+/* 기본 여백 제거 */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* 전체 배경 */
+#e__12 {
+  width: 100vw; /* 화면 가로 크기 100% */
+  max-width: 1440px; /* 최대 너비 제한 */
+  height: 100vh; /* 화면 세로 100% */
+  max-height: 1024px; /* 최대 높이 제한 */
+  top: -20px;
+  margin: 0 auto; /* 가운데 정렬 */
+  position: relative;
+  background-color: #fff;
+  overflow: hidden; /* 넘치는 내용 숨기기 */
+}
+
+/* iM your man – 왼쪽 상단 */
+#e__3237 {
+  position: absolute;
+  width: auto;
+  height: 58px;
+  top: 80px;
+  left: 41px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
+  color: #000000;
+  white-space: nowrap;
+}
+
+/* 안내 메시지 – 가운데 하단 */
+#e__3239 {
+  position: absolute;
+  width: auto;
+  height: 48px;
+  top: 292px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: #000000;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* 펀드 버튼 배경 (법인 위치) */
+#e__3229 {
+  width: 269px;
+  height: 259px;
+  background-color: #55C0A6;
+  position: absolute;
+  top: 418px;
+  left: 301px;
+  border-radius: 50%;
+}
+
+/* 펀드 텍스트 (법인 위치) */
+#e__3224 {
+  position: absolute;
+  width: 74px;
+  height: 48px;
+  left: calc(50% - 74px/2 - 284px);
+  top: 524px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: #000000;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* 예적금 카드 버튼 배경 (개인 위치) */
+#e__3230 {
+  width: 269px;
+  height: 259px;
+  background-color: #55C0A6;
+  position: absolute;
+  top: 418px;
+  left: 873px;
+  border-radius: 50%;
+}
+
+/* 예적금 카드 텍스트 (개인 위치) */
+#e__3230-text {
+  position: absolute;
+  width: 120px; /* 텍스트 길이에 맞게 조정 가능 */
+  height: 48px;
+  left: calc(50% - 120px/2 + 288px);
+  top: 505px;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  color: #000000;
+  text-align: center;
+  white-space: normal; /* nowrap → normal로 변경 */
+}
