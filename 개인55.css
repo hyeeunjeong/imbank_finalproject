@@ -15,29 +15,23 @@ html, body {
   position: relative;
   background-color: #fff;
   overflow: hidden; /* 넘치는 내용 숨기기 */
-
-   /* 이미지 배경 추가 */
-  /* background-image: url('img.png');
-  background-position: right top; 
-  background-repeat: no-repeat;
-  background-size: 337px 85px; */
 }
 
 /* iM your man – 왼쪽 상단 */
-#e__3234 {
+#e__3237 {
   position: absolute;
   width: auto;
   height: 58px;
-  top: 80px;       /* 단위 px 추가 */
+  top: 80px;
   left: 41px;
   font-weight: 700;
   font-size: 48px;
   line-height: 58px;
   color: #000000;
-  white-space: nowrap; /* 줄바꿈 방지 */
+  white-space: nowrap;
 }
 
-#e__148 {
+#e__3250 {
   position: absolute;
   top: 80px;       /* 단위 px 추가 */
   right: 0;
@@ -46,7 +40,7 @@ html, body {
 }
 
 /* 안내 메시지 – 가운데 하단 */
-#e__3235 {
+#e__3239 {
   position: absolute;
   width: auto;
   height: 48px;
@@ -57,12 +51,12 @@ html, body {
   font-size: 40px;
   line-height: 48px;
   color: #000000;
-  white-space: nowrap; /* 줄바꿈 방지 */
+  white-space: nowrap;
   text-align: center;
 }
 
-/* 법인 버튼 배경 */
-#e__217 {
+/* 펀드 버튼 배경 (법인 위치) */
+#e__3229 {
   width: 269px;
   height: 259px;
   background-color: #55C0A6;
@@ -72,8 +66,8 @@ html, body {
   border-radius: 50%;
 }
 
-/* 법인 텍스트 */
-#e__212 {
+/* 펀드 텍스트 (법인 위치) */
+#e__3224 {
   position: absolute;
   width: 74px;
   height: 48px;
@@ -84,10 +78,11 @@ html, body {
   line-height: 48px;
   color: #000000;
   text-align: center;
+  white-space: nowrap;
 }
 
-/* 개인 버튼 배경 */
-#e__218 {
+/* 예적금 카드 버튼 배경 (개인 위치) */
+#e__3230 {
   width: 269px;
   height: 259px;
   background-color: #55C0A6;
@@ -97,23 +92,17 @@ html, body {
   border-radius: 50%;
 }
 
-/* 개인 텍스트 */
-#e__215 {
+/* 예적금 카드 텍스트 (개인 위치) */
+#e__3230-text {
   position: absolute;
-  width: 74px;
+  width: 120px; /* 텍스트 길이에 맞게 조정 가능 */
   height: 48px;
-  left: calc(50% - 74px/2 + 288px);
-  top: 524px;
-  text-align: center;
-}
-
-.link-text {
-  display: block;
-  width: 100%;
-  height: 100%;
+  left: calc(50% - 120px/2 + 288px);
+  top: 505px;
   font-weight: 700;
   font-size: 40px;
   line-height: 48px;
   color: #000000;
-  text-decoration: none;
+  text-align: center;
+  white-space: normal; /* nowrap → normal로 변경 */
 }
