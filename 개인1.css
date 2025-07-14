@@ -16,6 +16,7 @@ html, body {
   max-width: 1440px;
   height: 100vh;
   max-height: 1024px;
+  top: -60px;
   margin: 0 auto;
   position: relative;
   background-color: #fff;
@@ -26,8 +27,8 @@ html, body {
   width: 337px;
   height: 85px;
   position: absolute;
-  top: 80px;
-  left: 1103px;
+  top: 90px;
+  right: 0;
 }
 
 #e__149 {
@@ -37,8 +38,9 @@ html, body {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   position: absolute;
-  top: 80px;
-  left: 41px;
+  top: 85px;
+  left: 14px;
+  height: 38px;
   text-align: center;
   font-size: 48px;
   white-space: nowrap;
@@ -51,19 +53,19 @@ html, body {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   position: absolute;
-  top: 396px;
-  left: 525px;
+  top: 376px;
+  left: 430px;
   text-align: center;
-  font-size: 40px;
+  font-size: 55px;
   white-space: nowrap;
 }
 
 #e__1412 {
   position: absolute;
-  top: 565px;
+  top: 545px;
   left: 114px;
   width: 989px;
-  height: 79px;
+  height: 70px;
   font-size: 28px;
   padding: 10px;
   border: 3px solid #000;
@@ -76,13 +78,13 @@ html, body {
   height: 79px;
   background-color: rgba(255, 255, 255, 1.00);
   position: absolute;
-  top: 565px;
+  top: 545px;
   left: 1159px;
 }
 
 #e__1618 {
   position: absolute;
-  top: 565px;
+  top: 540px;
   left: 1159px;
   width: 177px;
   height: 79px;

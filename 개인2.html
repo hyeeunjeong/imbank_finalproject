@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>개인 정보</title>
+  <link rel="stylesheet" href="개인2.css" />
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const userId = params.get('userId') || '';
+
+      // ID 값 설정
+      document.getElementById('e__25120').textContent = userId;
+
+      // 나머지 값은 비워둠
+      ['e__25122','e__25123','e__25124','e__25121'].forEach(id => {
+        document.getElementById(id).textContent = '';
+      });
+
+      // userId를 포함하여 링크 업데이트
+      document.getElementById('e__25109').href = `펀드.html?userId=${encodeURIComponent(userId)}`;
+      document.getElementById('e__25111').href = `예적금.html?userId=${encodeURIComponent(userId)}`;
+      document.getElementById('e__25112').href = `카드.html?userId=${encodeURIComponent(userId)}`;
+    });
+  </script>
+</head>
+<body>
+  <div id="e__25108">
+    <img id="e__25113" src="img.png" alt="로고 이미지" />
+
+    <!-- 로고 텍스트 -->
+    <div id="e__25114">iM your man</div>
+
+    <!-- 항목명 -->
+    <div id="e__25115">ID</div>
+    <div id="e__25117">성별</div>
+    <div id="e__25118">나이</div>
+    <div id="e__25119">등급</div>
+    <div id="e__25116">KCB 신용 점수</div>
+
+    <!-- 값 영역 -->
+    <div id="e__25120"></div> <!-- ID -->
+    <div id="e__25122"></div> <!-- 성별 -->
+    <div id="e__25123"></div> <!-- 나이 -->
+    <div id="e__25124"></div> <!-- 등급 -->
+    <div id="e__25121"></div> <!-- 신용 점수 -->
+
+    <!-- 버튼 -->
+    <a href="펀드.html" id="e__25109"><div id="e__25125">펀드</div></a>
+    <a href="예적금.html" id="e__25111"><div id="e__25126">예적금</div></a>
+    <a href="카드.html" id="e__25112"><div id="e__25127">카드</div></a>
+
+    <!-- 신용 점수 회색 배경 박스 -->
+    <div id="e__25110"></div>
+  </div>
+</body>
+</html>

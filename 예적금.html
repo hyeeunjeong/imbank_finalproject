@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>iM your man - 예적금 추천</title>
+  <link rel="stylesheet" href="예적금.css"> <!-- CSS 분리 -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const userId = params.get('userId') || '';
+
+      // ID 박스에 출력
+      document.getElementById('e__26244').textContent = userId;
+
+      // 상품 설명 박스는 현재는 공백
+      document.getElementById('e__26261').textContent = '';
+    });
+  </script>
+</head>
+<body>
+  <div id="e__25179">
+    
+    <!-- 로고 이미지 -->
+    <img id="e__25184" src="img.png" alt="로고 이미지" />
+
+    <!-- 로고 텍스트 -->
+    <div id="e__25185">iM your man</div>
+
+    <!-- ID 박스 -->
+    <div id="e__26244"></div>
+
+    <!-- 추천 안내 텍스트 -->
+    <div id="e__26242">님의 추천 예적금 상품입니다</div>
+
+    <!-- 상품 설명 영역 -->
+    <div id="e__26261"></div>
+
+    <!-- 안내 문구 -->
+    <div id="e__26263">자세한 설명은 상품명을 눌러 확인하십시오</div>
+
+  </div>
+</body>
+</html>
