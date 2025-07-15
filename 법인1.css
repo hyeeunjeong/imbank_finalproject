@@ -1,0 +1,116 @@
+/* 기본 여백 제거 + 스크롤 방지 */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#e__44305 {
+  width: 1440px;
+  height: 1024px;
+  background-color: #ffffff;
+  position: relative;
+}
+
+#e__44306 {
+  width: 320px;
+  height: 85px;
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+
+#e__44307 {
+  color: #000;
+  font-weight: 700;
+  position: absolute;
+  top: 25px;
+  left: 65px;
+  font-size: 48px;
+}
+
+#e__44308 {
+  width: 519px;
+  height: 67px;
+  color: #000;
+  font-weight: 700;
+  position: absolute;
+  top: 206px;
+  left: 461px;
+  text-align: center;
+  font-size: 55px;
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+.autocomplete-wrapper {
+  position: absolute;
+  top: 365px;
+  left: 114px;
+  width: 989px;
+}
+
+#e__44309 {
+  width: 100%;
+  height: 79px;
+  font-size: 24px;
+  padding: 0 15px;
+  border: 3px solid #000;
+  box-sizing: border-box;
+}
+
+#autocomplete-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 180px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+}
+
+#autocomplete-list li {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+#autocomplete-list li:hover {
+  background-color: #f0f0f0;
+}
+
+#e__44310 {
+  border: none;
+  width: 177px;
+  height: 79px;
+  background-color: black;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  top: 365px;
+  left: 1159px;
+  cursor: pointer;
+}
+
+#e__44313 {
+  width: 100%;
+  color: #000;
+  font-weight: 700;
+  position: absolute;
+  top: 650px;
+  left: 314px;
+  font-size: 24px;
+  white-space: nowrap; /* 줄바꿈 방지 */
+}
+
+#e__44313 a {
+  color: blue;
+  text-decoration: underline;
+  margin-left: 10px;
+}

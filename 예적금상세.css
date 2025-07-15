@@ -1,0 +1,67 @@
+/* 기본 여백 및 스크롤 방지 */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* 전체 컨테이너 */
+#e__25179 {
+  width: 1440px;
+  height: 1024px;
+  background-color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 로고 이미지 */
+#e__25184 {
+  width: 320px;
+  height: 85px;
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  transform: translateX(0);
+}
+
+/* 로고 텍스트 */
+#e__25185 {
+  width: auto;
+  height: auto;
+  color: #000000;
+  font-family: Inter;
+  font-weight: 700;
+  position: absolute;
+  top: 25px;
+  left: 65px;
+  font-size: 48px;
+  text-align: center;
+}
+
+/* 펀드 상세 설명 컨테이너 */
+#fund-desc {
+  position: absolute;
+  top: 130px;  /* 로고 밑 공간 확보 */
+  left: 90px;
+  width: 1260px;
+  height: 850px;
+  overflow-y: auto;
+  font-size: 20px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+
+/* 펀드명 제목 스타일 */
+#fund-desc h2 {
+  font-weight: 700;
+  font-size: 28px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* 펀드 설명 텍스트 스타일 */
+#fund-desc p {
+  margin-top: 0;
+  margin-bottom: 15px;
+}

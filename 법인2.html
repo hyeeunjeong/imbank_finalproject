@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>iM your man - 법인 검색 결과</title>
+  <link rel="stylesheet" href="법인2.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet" />
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const corpName = params.get('corpName') || '';
+
+      // 기업명 표시
+      document.getElementById('e__44328').textContent = corpName;
+
+      // 데이터셋 (정적 데이터)
+      const corpData = {
+        '삼성전자': {
+          code: '005930',
+          description: '한국을 대표하는 글로벌 전자기업'
+        },
+        '삼성물산': {
+          code: '000830',
+          description: '건설, 패션, 상사를 아우르는 복합 기업'
+        }
+      };
+
+      const corp = corpData[corpName];
+
+      if (corp) {
+        document.getElementById('result-code').textContent = corp.code;
+        document.getElementById('result-name').textContent = corpName;
+        document.getElementById('result-desc').textContent = corp.description;
+
+        // 재무제표 외부 링크 설정
+        const financialLink = document.getElementById('financial-link');
+        financialLink.href = `https://comp.fnguide.com/SVO2/ASP/SVD_Main.asp?pGB=1&gicode=A${corp.code}&cID=&MenuYn=Y&ReportGB=D&NewMenuID=Y&stkGb=701`;
+        financialLink.style.display = 'inline-block';
+      } else {
+        document.getElementById('result-code').textContent = '정보 없음';
+        document.getElementById('result-desc').textContent = '설명 정보가 없습니다.';
+        document.getElementById('financial-link').style.display = 'none';
+      }
+    });
+  </script>
+</head>
+<body>
+  <div id="e__44317">
+    <img id="e__44318" src="자료/img.png" alt="로고 이미지" />
+    <div id="e__44319">iM your man</div>
+
+    <div id="e__44327">검색 결과</div>
+    <div id="e__44328"></div>
+
+    <div id="e__44331">종목 코드</div>
+    <div id="e__44333">기업명</div>
+    <div id="e__44335">설명</div>
+
+    <div id="result-code" style="position:absolute; top: 400px; left: 104px; font-family: Inter; font-weight: 700; font-size: 30px; text-align: center;"></div>
+    <div id="result-name" style="position:absolute; top: 400px; left: 482px; font-family: Inter; font-weight: 700; font-size: 30px; text-align: center;"></div>
+    <div id="result-desc" style="position:absolute; top: 400px; left: 919px; font-family: Inter; font-weight: 700; font-size: 30px; text-align: left; max-width: 400px; white-space: nowrap;"></div>
+
+    <!-- 재무제표 보기 링크 버튼 -->
+    <div style="position: absolute; top: 131px; right: 0px;">
+      <a id="financial-link" href="#" target="_blank" style="
+        font-family: Inter;
+        font-weight: 700;
+        font-size: 20px;
+        padding: 15px 40px;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        display: none;">
+        해당 기업 재무제표 보기
+      </a>
+    </div>
+  </div>
+</body>
+</html>

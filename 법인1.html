@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>iM your man - 법인용</title>
+  <link rel="stylesheet" href="법인1.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <form action="법인2.html" method="GET" autocomplete="off">
+    <div id="e__44305">
+      <!-- 로고 이미지 -->
+      <img id="e__44306" src="자료/img.png" alt="로고 이미지" />
+
+      <!-- 로고 텍스트 -->
+      <div id="e__44307">iM your man</div>
+
+      <!-- 기업명 입력 안내 -->
+      <div id="e__44308">기업명을 입력하십시오</div>
+
+      <!-- 입력창과 자동완성 리스트를 감싸는 박스 -->
+      <div class="autocomplete-wrapper">
+        <input type="text" id="e__44309" name="corpName" required placeholder="예: 삼성전자" />
+        <ul id="autocomplete-list"></ul>
+      </div>
+
+      <!-- 검색 버튼 -->
+      <button type="submit" id="e__44310">검색</button>
+
+      <!-- 주의사항 안내 + 다운로드 링크 -->
+      <div id="e__44313">
+        주의사항은 다음 파일을 참조하십시오:  
+        <a href="자료/추천 시스템 사용 관련 안내.docx" download>
+          추천 시스템 사용 관련 안내문 다운로드
+        </a>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    const 코스피100기업리스트 = ['삼성전자', '삼성물산', '현대자동차', '현대모비스', '카카오', '네이버', 'LG전자', 
+    'LG화학', 'SK하이닉스', '포스코', '한화', '한진칼'];
+
+    const input = document.getElementById('e__44309');
+    const list = document.getElementById('autocomplete-list');
+
+    input.addEventListener('input', () => {
+      const query = input.value.trim().toLowerCase();
+      list.innerHTML = '';
+
+      if (query.length === 0) return;
+
+      const 필터 = 코스피100기업리스트.filter(name => name.toLowerCase().includes(query));
+
+      필터.forEach(name => {
+        const item = document.createElement('li');
+        item.textContent = name;
+        item.addEventListener('click', () => {
+          input.value = name;
+          list.innerHTML = '';
+        });
+        list.appendChild(item);
+      });
+    });
+
+    document.addEventListener('click', e => {
+      if (!document.querySelector('.autocomplete-wrapper').contains(e.target)) {
+        list.innerHTML = '';
+      }
+    });
+  </script>
+</body>
+</html>

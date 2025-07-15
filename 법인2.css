@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:Bold');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+#e__44317 {
+  width: 1440px;
+  height: 1024px;
+  background-color: #fff;
+  position: relative;
+}
+
+#e__44318 {
+  width: 320px;
+  height: 85px;
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+
+#e__44319 {
+  color: #000;
+  font-weight: 700;
+  position: absolute;
+  top: 25px;
+  left: 65px;
+  font-size: 48px;
+}
+
+#e__44327 {
+  width: 157px;
+  height: 48px;
+  color: #000;
+  font-weight: 700;
+  position: absolute;
+  top: 131px;
+  left: 520px;
+  text-align: center;
+  font-size: 40px;
+  white-space: nowrap;
+}
+
+#e__44328 {
+  position: absolute;
+  top: 131px;
+  left: 104px;
+  font-weight: 700;
+  font-size: 40px;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* 라벨들 */
+#e__44331, #e__44333, #e__44335 {
+  color: #000;
+  font-weight: 700;
+  font-size: 32px;
+  white-space: nowrap;
+  position: absolute;
+  top: 252px;
+  text-align: center;
+}
+
+#e__44331 { left: 104px; }
+#e__44333 { left: 482px; }
+#e__44335 { left: 919px; }
+
+/* 결과값은 inline style로 위치 조정했음 */
+
