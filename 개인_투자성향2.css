@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  background-color: #FFFFFF;
+  height: 100vh;       /* 화면 전체 높이 */
+  overflow: hidden;    /* 스크롤 숨기기 */
+}
+
+#e__8341 {
+  width: 1440px;
+  height: 100vh;       /* 화면 높이와 맞춤 */
+  position: relative;
+  background-color: #FFFFFF;
+  overflow: hidden;    /* 내부 스크롤 숨김 */
+}
+
+#e__8342 {
+  width: 337px;
+  height: auto;
+  position: fixed;
+  top: 35px;
+  right: 90px;
+}
+
+#e__8343 {
+  color: #000000;
+  font-weight: 700;
+  position: fixed;
+  top: 35px;
+  left: 65px;
+  font-size: 48px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#e__8344 {
+  position: relative; /* absolute 제거 */
+  top: auto;          /* 위치 초기화 */
+  left: auto;
+  margin: 120px auto 35px auto; /* 위쪽 여백으로 공간 확보 */
+  width: 800px;
+  text-align: center;
+  font-size: 32px;
+  line-height: 1.5;
+  color: #000;
+  font-weight: 700;
+}
+
+#e__8345 {
+  max-width: 835px;
+  margin: 30px auto 0 auto; /* 위쪽 여유 */
+  color: #000000;
+  font-weight: 700;
+  text-align: left;
+  font-size: 28px;
+  line-height: 1.6;
+  position: relative;
+}
+
+#investmentPeriodForm {
+  margin-top: 30px;
+}
+
+/* 라디오 텍스트 굵기, 줄바꿈 유지 */
+#investmentPeriodForm label {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 16px;
+  line-height: 1.8;
+  white-space: normal;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+
+#investmentPeriodForm button {
+  margin-top: 20px;
+  padding: 12px 36px;
+  font-size: 24px;
+  font-weight: 700;
+  background-color: #82DF7E;
+  color: #000000;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

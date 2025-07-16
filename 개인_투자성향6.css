@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  background-color: #FFFFFF;
+  height: 100%;
+  overflow: hidden; /* 스크롤 제거 */
+}
+
+#e__8347 {
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+  background-color: #FFFFFF;
+}
+
+#e__8348 {
+  width: 337px;
+  height: auto;
+  position: fixed;
+  top: 35px;
+  right: 90px;
+}
+
+#e__8349 {
+  color: #000000;
+  font-weight: 700;
+  position: fixed;
+  top: 35px;
+  left: 65px;
+  font-size: 48px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#e__8350 {
+  position: relative;
+  top: auto;
+  left: auto;
+  margin: 120px auto 35px auto;
+  width: 800px;
+  text-align: center;
+  font-size: 32px;
+  line-height: 1.5;
+  color: #000;
+  font-weight: 700;
+}
+
+#e__8351 {
+  max-width: 835px;
+  margin: 30px auto 0 auto;
+  color: #000000;
+  font-weight: 700;
+  text-align: left;
+  font-size: 28px;
+  line-height: 1.6;
+  position: relative;
+}
+
+#investmentExperienceForm {
+  margin-top: 30px;
+}
+
+#investmentExperienceForm label {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 16px;
+  line-height: 1.8;
+  white-space: normal;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+
+#investmentExperienceForm button {
+  margin-top: 20px;
+  padding: 12px 36px;
+  font-size: 24px;
+  font-weight: 700;
+  background-color: #82DF7E;
+  color: #000000;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

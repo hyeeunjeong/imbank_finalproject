@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>iM your man - 카드 추천</title>
+  <link rel="stylesheet" href="법인_카드.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="e__7091">
+    <img id="e__7092" src="자료/img.png" alt="로고 이미지" />
+    <div id="e__7093">iM your man</div>
+
+    <div id="selected-company-row">
+      <div class="keyword-box" id="corp-name-box">기업명</div>
+      <div class="subtitle">기업의 추천 카드 상품입니다</div>
+    </div>
+
+    <!-- 예적금 추천 리스트 -->
+    <ul id="product-list">
+      <li><a href="법인_카드_상세.html?product=SmartSave1">Smart Save 정기예금</a></li>
+      <li><a href="법인_카드_상세.html?product=FlexDeposit">플렉스 적금</a></li>
+      <li><a href="법인_카드_상세.html?product=HighRatePlus">하이레이트 예금 Plus</a></li>
+      <li><a href="법인_카드_상세.html?product=YouthPlan">청년 희망 적금</a></li>
+    </ul>
+
+    <!-- 하단 설명 -->
+    <div id="e__7096">자세한 설명은 상품명을 눌러 확인하십시오</div>
+  </div>
+
+  <script>
+    // URL에서 corpName 받아와서 네모에 표시
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const corpName = params.get('corpName') || '기업명 없음';
+      document.getElementById('corp-name-box').textContent = corpName;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>iM your man - 투자성향 결과</title>
+  <link rel="stylesheet" href="개인_투자성향_결과.css">
+</head>
+<body>
+  <div id="e__932">
+    <img id="e__933" src="자료/img.png" alt="로고">
+    <div id="e__934">iM your man</div>
+    <div id="e__935">고객님의 투자성향은 다음과 같습니다.</div>
+    <div id="e__939"></div> <!-- ✅ 총 점수 출력 추가 -->
+
+    <!-- ID 출력 박스 -->
+    <div id="e__938"></div>
+
+    <!-- 결과 표 -->
+    <div id="result-table">
+      <div class="table-header">등급</div>
+      <div class="table-header">유형</div>
+      <div class="table-header">설명</div>
+
+      <div class="table-data" id="grade"></div>
+      <div class="table-data" id="type"></div>
+      <div class="table-data" id="description"></div>
+    </div>
+  </div>
+
+  <script>
+    // URL에서 userId 가져오기
+    const urlParams = new URLSearchParams(window.location.search);
+    const userId = urlParams.get('userId') || 'Unknown';
+
+    // 점수 값 가져오기
+    const scores = JSON.parse(localStorage.getItem('investmentScores') || '{}');
+    const total = Object.values(scores).reduce((sum, v) => sum + parseInt(v), 0);
+
+    document.getElementById('e__939').innerText = `총 점수: ${total}점`;
+
+    // 유형 결정 로직
+    let type='', grade='', description='';
+    if (total <= 20) {
+      type = '안정형'; grade = '0';
+      description = '예금 또는 적금 수준의 수익률을 기대하며, 투자원금 손실을 원하지 않음';
+    } else if (total <= 40) {
+      type = '안정추구형'; grade = '1';
+      description = '손실위험은 최소화하되 예/적금보다 높은 수익도 추구';
+    } else if (total <= 60) {
+      type = '위험중립형'; grade = '2';
+      description = '투자위험을 인식하고 있고 일정 손실도 감수 가능';
+    } else if (total <= 80) {
+      type = '적극투자형'; grade = '3';
+      description = '높은 수익을 위해 위험 감수';
+    } else {
+      type = '공격투자형'; grade = '4';
+      description = '시장 평균 이상의 수익 추구, 대부분 자산을 위험자산에 투자';
+    }
+
+    // 결과 출력
+    document.getElementById('e__938').innerText = `고객 ID: ${userId}`;
+    document.getElementById('type').innerText = type;
+    document.getElementById('grade').innerText = grade;
+    document.getElementById('description').innerText = description;
+  </script>
+</body>
+</html>

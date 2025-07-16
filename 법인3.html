@@ -11,19 +11,34 @@
     <img id="logo" src="자료/img.png" alt="로고 이미지" />
     <div id="title">iM your man</div>
 
-    <div id="result-title">선택 기업</div>
-    <div id="selected-company-box">
-      <span id="selected-company-name">기업명 불러오는 중...</span>
+    <!-- 선택 기업 네모박스 + 텍스트 -->
+    <div id="selected-company-row">
+      <div id="selected-box"><span id="selected-company-name">기업명</span></div>
+      <div id="result-title">해당 기업 선택 결과</div>
     </div>
 
-    <div class="label" id="label-code">종목 코드</div>
-    <div class="label" id="label-name">기업명</div>
-    <div class="value" id="corp-code">-</div>
-    <div class="value" id="corp-name">-</div>
+    <!-- 표 형태로 기업정보 출력 -->
+    <table id="corp-info-table">
+      <thead>
+        <tr>
+          <th>종목코드</th>
+          <th>기업명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="corp-code">-</td>
+          <td id="corp-name">-</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <div class="btn" id="deposit-btn">예적금</div>
-    <div class="btn" id="loan-btn">대출</div>
-    <div class="btn" id="card-btn">카드</div>
+    <!-- 버튼 -->
+    <div class="btn-container">
+      <div class="big-btn" id="deposit-btn">예적금</div>
+      <div class="big-btn" id="loan-btn">대출</div>
+      <div class="big-btn" id="card-btn">카드</div>
+    </div>
   </div>
 
   <script>
@@ -36,7 +51,6 @@
       document.getElementById('corp-name').textContent = corpName;
       document.getElementById('corp-code').textContent = corpCode;
 
-      // 버튼 클릭 시 다음 페이지로 이동
       document.getElementById('deposit-btn').addEventListener('click', () => {
         window.location.href = `법인_예적금.html?corpName=${encodeURIComponent(corpName)}&corpCode=${encodeURIComponent(corpCode)}`;
       });

@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+/* 기본 설정 */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  background-color: #FFFFFF;
+}
+
+/* 전체 배경 컨테이너 */
+#e__8331 {
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+  background-color: #FFFFFF;
+}
+
+/* 로고 이미지 (오른쪽 상단) */
+#e__8332 {
+  width: 337px;
+  height: 85px;
+  position: absolute;
+  top: 35px;
+  right: 0;
+}
+
+/* 상단 타이틀 텍스트 */
+#e__8333 {
+  width: auto;
+  height: auto;
+  color: #000000;
+  font-weight: 700;
+  position: absolute;
+  top: 35px;
+  left: 65px;
+  font-size: 48px;
+  text-align: center;
+}
+
+/* 설명 문구 (줄바꿈 포함) */
+#e__8334 {
+  width: 800px;
+  height: auto;
+  color: #000000;
+  font-weight: 700;
+  position: absolute;
+  top: 150px;
+  left: 360px;
+  text-align: center;
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+/* 질문 영역 */
+#e__8340 {
+  width: 835px;
+  height: auto;
+  color: #000000;
+  font-weight: 700;
+  position: absolute;
+  top: 260px;
+  left: 300px;
+  text-align: left;
+  font-size: 28px;
+}
+
+/* 폼 스타일 */
+#ageForm {
+  margin-top: 20px;
+}
+
+/* 설문 항목 라벨 */
+#ageForm label {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+
+/* 다음 버튼 스타일 */
+#ageForm button {
+  margin-top: 20px;
+  padding: 12px 36px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #82DF7E;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

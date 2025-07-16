@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>iM your man - 투자성향 4</title>
+  <link rel="stylesheet" href="개인_투자성향4.css" />
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const userId = urlParams.get('userId') || '';
+
+    function goNext() {
+      const radios = document.getElementsByName('investmentExperience');
+      let selectedValue = null;
+      for (const radio of radios) {
+        if (radio.checked) {
+          selectedValue = radio.value;
+          break;
+        }
+      }
+      if (selectedValue === null) {
+        alert('투자경험을 선택해 주세요.');
+        return;
+      }
+
+      let prevScores = JSON.parse(localStorage.getItem('investmentScores')) || {};
+      prevScores.question4 = selectedValue;
+      localStorage.setItem('investmentScores', JSON.stringify(prevScores));
+
+      window.location.href = `개인_투자성향5.html?userId=${encodeURIComponent(userId)}`;
+    }
+  </script>
+</head>
+<body>
+  <div id="e__8347">
+    <img id="e__8348" src="자료/img.png" alt="로고" />
+    <div id="e__8349">iM your man</div>
+    <div id="e__8350">
+      투자성향에 맞는 금융상품투자로<br />
+      고객님의 소중한 투자자산을 보호하세요.
+    </div>
+    <div id="e__8351">
+      <form id="investmentExperienceForm" onsubmit="event.preventDefault(); goNext();">
+        <div>04. 금융상품 투자 지식수준은?</div>
+        <label><input type="radio" name="investmentExperience" value="1" /> 매우 낮은 수준 </label>
+        <label><input type="radio" name="investmentExperience" value="2" /> 낮은 수준 </label>
+        <label><input type="radio" name="investmentExperience" value="3" /> 높은 수준</label>
+        <label><input type="radio" name="investmentExperience" value="4" /> 매우 높은 수준</label>
+        <button type="submit">다음</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

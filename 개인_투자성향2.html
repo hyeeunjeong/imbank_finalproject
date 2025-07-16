@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>iM your man - 투자성향 2</title>
+  <link rel="stylesheet" href="개인_투자성향2.css" />
+  <script>
+    // userId 받기
+    const urlParams = new URLSearchParams(window.location.search);
+    const userId = urlParams.get('userId') || '';
+
+    function goNext() {
+      const radios = document.getElementsByName('investmentPeriod');
+      let selectedValue = null;
+      for (const radio of radios) {
+        if (radio.checked) {
+          selectedValue = radio.value;
+          break;
+        }
+      }
+      if (selectedValue === null) {
+        alert('투자가능기간을 선택해 주세요.');
+        return;
+      }
+      // 이전 저장된 값 불러오기
+      let prevScores = JSON.parse(localStorage.getItem('investmentScores')) || {};
+      // 이번 점수 저장
+      prevScores.question2 = selectedValue;
+      localStorage.setItem('investmentScores', JSON.stringify(prevScores));
+
+      window.location.href = `개인_투자성향3.html?userId=${encodeURIComponent(userId)}`;
+    }
+  </script>
+</head>
+<body>
+  <div id="e__8341">
+    <img id="e__8342" src="자료/img.png" alt="로고" />
+    <div id="e__8343">iM your man</div>
+    <div id="e__8344">
+      투자성향에 맞는 금융상품투자로<br />
+      고객님의 소중한 투자자산을 보호하세요.
+    </div>
+    <form id="investmentPeriodForm" onsubmit="event.preventDefault(); goNext();" style="max-width: 835px; margin: 0 auto;">
+      <p id="e__8345">02. 투자 자금의 투자가능기간은 얼마나 되십니까?</p>
+      <label><input type="radio" name="investmentPeriod" value="1" /> 6개월 이내</label>
+      <label><input type="radio" name="investmentPeriod" value="2" /> 6개월 이상 ~ 1년 이내</label>
+      <label><input type="radio" name="investmentPeriod" value="3" /> 1년 이상 ~ 2년 이내</label>
+      <label><input type="radio" name="investmentPeriod" value="4" /> 2년 이상 ~ 3년 이내</label>
+      <label><input type="radio" name="investmentPeriod" value="5" /> 3년 이상</label>
+      <button type="submit">다음</button>
+    </form>
+  </div>
+</body>
+</html>
