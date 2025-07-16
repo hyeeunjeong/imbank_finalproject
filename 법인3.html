@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>iM your man - 기업 선택 결과</title>
+  <link rel="stylesheet" href="법인3.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="container">
+    <img id="logo" src="자료/img.png" alt="로고 이미지" />
+    <div id="title">iM your man</div>
+
+    <div id="result-title">선택 기업</div>
+    <div id="selected-company-box">
+      <span id="selected-company-name">기업명 불러오는 중...</span>
+    </div>
+
+    <div class="label" id="label-code">종목 코드</div>
+    <div class="label" id="label-name">기업명</div>
+    <div class="value" id="corp-code">-</div>
+    <div class="value" id="corp-name">-</div>
+
+    <div class="btn" id="deposit-btn">예적금</div>
+    <div class="btn" id="loan-btn">대출</div>
+    <div class="btn" id="card-btn">카드</div>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const corpName = params.get('corpName') || '정보 없음';
+      const corpCode = params.get('corpCode') || '정보 없음';
+
+      document.getElementById('selected-company-name').textContent = corpName;
+      document.getElementById('corp-name').textContent = corpName;
+      document.getElementById('corp-code').textContent = corpCode;
+
+      // 버튼 클릭 시 다음 페이지로 이동
+      document.getElementById('deposit-btn').addEventListener('click', () => {
+        window.location.href = `법인_예적금.html?corpName=${encodeURIComponent(corpName)}&corpCode=${encodeURIComponent(corpCode)}`;
+      });
+      document.getElementById('loan-btn').addEventListener('click', () => {
+        window.location.href = `법인_대출.html?corpName=${encodeURIComponent(corpName)}&corpCode=${encodeURIComponent(corpCode)}`;
+      });
+      document.getElementById('card-btn').addEventListener('click', () => {
+        window.location.href = `법인_카드.html?corpName=${encodeURIComponent(corpName)}&corpCode=${encodeURIComponent(corpCode)}`;
+      });
+    });
+  </script>
+</body>
+</html>

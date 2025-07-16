@@ -2,8 +2,8 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>iM your man - 카드 추천</title>
-  <link rel="stylesheet" href="카드.css" />
+  <title>iM your man - 개인 예적금 추천</title>
+  <link rel="stylesheet" href="개인_예적금.css" />
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
@@ -42,11 +42,11 @@
       const container = document.getElementById('e__26261');
 
       if (추천펀드목록.length === 0) {
-        container.textContent = '추천 카드 상품이 없습니다.';
+        container.textContent = '추천 펀드 상품이 없습니다.';
       } else {
         container.innerHTML = 추천펀드목록.map(fund => `
           <p>
-            <a href="카드상세.html?name=${encodeURIComponent(fund.name)}"
+            <a href="개인_예적금상세.html?name=${encodeURIComponent(fund.name)}"
                style="color: black; font-weight: bold; text-decoration: underline;">
                ${fund.name}
             </a>
@@ -70,7 +70,7 @@
     <div id="e__26244" style="margin-top: 20px; font-weight: bold;"></div>
 
     <!-- 추천 안내 텍스트 -->
-    <div id="e__26242" style="margin-top: 10px;">님의 추천 카드 상품입니다</div>
+    <div id="e__26242" style="margin-top: 10px;">님의 추천 예적금 상품입니다</div>
 
     <!-- 상품 설명 영역 -->
     <div id="e__26261" style="margin-top: 20px;"></div>

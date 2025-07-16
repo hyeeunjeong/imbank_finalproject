@@ -50,7 +50,7 @@ html, body {
   position: absolute;
   width: auto;
   height: 48px;
-  top: 292px;
+  top: 252px;
   left: 50%;
   transform: translateX(-50%);
   font-weight: 700;
@@ -67,8 +67,8 @@ html, body {
   height: 259px;
   background-color: #82DF7E;
   position: absolute;
-  top: 441px;
-  left: 252px;
+  top: 401px;
+  left: 242px;
   border-radius: 100px;
   display: flex;
   align-items: center;     /* 수직 중앙 정렬 */
@@ -81,8 +81,8 @@ html, body {
   position: absolute;
   width: 74px;
   height: 48px;
-  left: calc(50% - 74px/2 - 320px);
-  top: 534px;
+  left: calc(50% - 74px/2 - 330px);
+  top: 494px;
   font-weight: 700;
   font-size: 50px;
   line-height: 48px;
@@ -100,8 +100,8 @@ html, body {
   height: 254px;
   background-color: #82DF7E;
   position: absolute;
-  top: 441px;
-  left: 877px;
+  top: 401px;
+  left: 867px;
   border-radius: 100px;
   display: flex;
   align-items: center;     /* 수직 중앙 정렬 */
@@ -114,8 +114,8 @@ html, body {
   position: absolute;
   width: 74px;
   height: 48px;
-  left: calc(50% - 74px/2 + 303px);
-  top: 534px;
+  left: calc(50% - 74px/2 + 293px);
+  top: 494px;
   text-align: center;
   white-space: nowrap;
   display: flex;

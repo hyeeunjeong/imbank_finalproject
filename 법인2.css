@@ -1,17 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:Bold');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #000;
+  overflow-x: hidden;
 }
 
 #e__44317 {
-  width: 1440px;
-  height: 1024px;
-  background-color: #fff;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 60px;
+  box-sizing: border-box;
   position: relative;
+  min-height: 100vh;
 }
 
 #e__44318 {
@@ -19,55 +23,98 @@ html, body {
   height: 85px;
   position: absolute;
   top: 30px;
-  right: 0;
+  right: 60px;
+  object-fit: contain;
 }
 
 #e__44319 {
-  color: #000;
   font-weight: 700;
-  position: absolute;
-  top: 25px;
-  left: 65px;
   font-size: 48px;
+  margin-bottom: 40px;
 }
 
-#e__44327 {
-  width: 157px;
-  height: 48px;
-  color: #000;
+/* 검색 키워드 표시 */
+#search-keyword {
   font-weight: 700;
-  position: absolute;
-  top: 131px;
-  left: 520px;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* 네모 박스 스타일 */
+.keyword-box {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  color: #000000;
+  background-color: transparent;
+  margin-right: 8px;
+}
+
+/* 테이블 스타일 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 12px 16px;
+  font-weight: 700;
+  font-size: 18px;
   text-align: center;
-  font-size: 40px;
   white-space: nowrap;
+  vertical-align: middle;
 }
 
-#e__44328 {
-  position: absolute;
-  top: 131px;
-  left: 104px;
-  font-weight: 700;
-  font-size: 40px;
-  color: #000;
-  white-space: nowrap;
+th {
+  background-color: #f5f5f5;
 }
 
-/* 라벨들 */
-#e__44331, #e__44333, #e__44335 {
-  color: #000;
+/* 버튼 스타일 */
+.btn {
+  padding: 8px 14px;
   font-weight: 700;
-  font-size: 32px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 5px;
   white-space: nowrap;
-  position: absolute;
-  top: 252px;
+  text-decoration: none;
+  display: inline-block;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-financial {
+  background-color: black;
+  color: white;
+}
+
+.btn-financial:hover {
+  background-color: #333;
+}
+
+.btn-select {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-select:hover {
+  background-color: #0056b3;
+}
+
+/* 검색 결과 없을 때 메시지 */
+#no-result {
+  margin-top: 30px;
+  font-size: 20px;
+  color: red;
+  font-weight: 700;
   text-align: center;
+  display: none;
 }
-
-#e__44331 { left: 104px; }
-#e__44333 { left: 482px; }
-#e__44335 { left: 919px; }
-
-/* 결과값은 inline style로 위치 조정했음 */
-

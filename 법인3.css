@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: #000;
+}
+
+#container {
+  width: 1440px;
+  margin: 0 auto;
+  padding: 40px 60px;
+  position: relative;
+}
+
+#logo {
+  width: 320px;
+  height: 85px;
+  position: absolute;
+  top: 30px;
+  right: 60px;
+  object-fit: contain;
+}
+
+#title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+#result-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+#selected-company-box {
+  width: fit-content;
+  padding: 12px 24px;
+  border: 2px solid #000;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.label {
+  font-size: 32px;
+  font-weight: 700;
+  display: inline-block;
+  margin-right: 40px;
+}
+
+#label-code {
+  position: absolute;
+  top: 300px;
+  left: 104px;
+}
+
+#label-name {
+  position: absolute;
+  top: 300px;
+  left: 482px;
+}
+
+.value {
+  font-size: 30px;
+  font-weight: 700;
+  position: absolute;
+  top: 350px;
+}
+
+#corp-code {
+  left: 104px;
+}
+
+#corp-name {
+  left: 482px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  background-color: #82df7e;
+  color: #000;
+  padding: 20px 40px;
+  margin: 80px 20px 0 0;
+  font-size: 28px;
+  font-weight: 700;
+  border-radius: 100px;
+  cursor: pointer;
+  text-align: center;
+}
+
+#deposit-btn { left: 60px; }
+#loan-btn { left: 60px; }
+#card-btn { left: 60px; }

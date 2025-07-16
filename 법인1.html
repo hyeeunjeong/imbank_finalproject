@@ -1,33 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>iM your man - 법인용</title>
-  <link rel="stylesheet" href="법인1.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="법인1.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+  <style>
+    .autocomplete-wrapper {
+      position: relative;
+    }
+
+    #autocomplete-list {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      border: 1px solid #ccc;
+      border-top: none;
+      background: white;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-height: 150px;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+
+    #autocomplete-list li {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    #autocomplete-list li:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
 </head>
 <body>
   <form action="법인2.html" method="GET" autocomplete="off">
     <div id="e__44305">
-      <!-- 로고 이미지 -->
       <img id="e__44306" src="자료/img.png" alt="로고 이미지" />
-
-      <!-- 로고 텍스트 -->
       <div id="e__44307">iM your man</div>
-
-      <!-- 기업명 입력 안내 -->
       <div id="e__44308">기업명을 입력하십시오</div>
 
-      <!-- 입력창과 자동완성 리스트를 감싸는 박스 -->
       <div class="autocomplete-wrapper">
-        <input type="text" id="e__44309" name="corpName" required placeholder="예: 삼성전자" />
+        <input type="text" id="e__44309" name="corpName" required placeholder="예: 삼성전자" autocomplete="off" />
         <ul id="autocomplete-list"></ul>
       </div>
 
-      <!-- 검색 버튼 -->
       <button type="submit" id="e__44310">검색</button>
 
-      <!-- 주의사항 안내 + 다운로드 링크 -->
       <div id="e__44313">
         주의사항은 다음 파일을 참조하십시오:  
         <a href="자료/추천 시스템 사용 관련 안내.docx" download>
@@ -38,8 +61,23 @@
   </form>
 
   <script>
-    const 코스피100기업리스트 = ['삼성전자', '삼성물산', '현대자동차', '현대모비스', '카카오', '네이버', 'LG전자', 
-    'LG화학', 'SK하이닉스', '포스코', '한화', '한진칼'];
+    let corpList = [];
+
+    // CSV 파일 불러오기 및 기업명 리스트 추출
+    fetch('자료/코스피100.csv')
+      .then(response => {
+        if (!response.ok) throw new Error('CSV 파일을 불러올 수 없습니다.');
+        return response.text();
+      })
+      .then(csvText => {
+        const result = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+        corpList = result.data.map(row => row['기업명']?.trim()).filter(Boolean);
+        // 콘솔에서 확인
+        console.log('불러온 기업 리스트:', corpList);
+      })
+      .catch(err => {
+        console.error('CSV 파싱 에러:', err);
+      });
 
     const input = document.getElementById('e__44309');
     const list = document.getElementById('autocomplete-list');
@@ -50,9 +88,9 @@
 
       if (query.length === 0) return;
 
-      const 필터 = 코스피100기업리스트.filter(name => name.toLowerCase().includes(query));
+      const filtered = corpList.filter(name => name.toLowerCase().includes(query));
 
-      필터.forEach(name => {
+      filtered.forEach(name => {
         const item = document.createElement('li');
         item.textContent = name;
         item.addEventListener('click', () => {
