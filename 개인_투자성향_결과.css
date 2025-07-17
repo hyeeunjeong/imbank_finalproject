@@ -17,7 +17,7 @@ html, body {
   margin: 0 auto;
   padding: 30px 50px;
   box-sizing: border-box;
-  position: relative;
+  position: relative; /* ✅ 버튼 절대 위치를 위한 기준 */
 }
 
 #e__933 {
@@ -56,6 +56,14 @@ html, body {
   color: #000;
 }
 
+#e__939 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  margin-top: 20px;
+}
+
 #result-table {
   width: 90%;
   max-width: 1000px;
@@ -79,10 +87,19 @@ html, body {
   color: #000;
   padding-top: 5px;
 }
-#e__939 {
-  font-size: 28px;
+
+/* ✅ 하단 고정된 '다음' 버튼 스타일 */
+#next-button {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 36px;
+  font-size: 24px;
   font-weight: 700;
+  background-color: #82DF7E;
   color: #000000;
-  text-align: center;
-  margin-top: 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
 }

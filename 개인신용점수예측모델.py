@@ -23,7 +23,7 @@ class CreditScorePredictor:
 
 # (2) 모델 불러오기
 import pickle
-with open('credit_score_predictor.pkl', 'rb') as f:
+with open('credit_score_predictor/credit_score_predictor.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # (3) 예측

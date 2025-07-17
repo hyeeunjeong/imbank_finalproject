@@ -9,26 +9,44 @@
       const params = new URLSearchParams(window.location.search);
       const userId = params.get('userId') || '';
 
-      // ID 값 설정
+      // ID 표시
       document.getElementById('e__25120').textContent = userId;
 
-      // 나머지 값은 비워둠
-      ['e__25122','e__25123','e__25124','e__25121'].forEach(id => {
-        document.getElementById(id).textContent = '';
-      });
+      // 설문 점수 계산 (로컬스토리지)
+      const scores = JSON.parse(localStorage.getItem('investmentScores') || '{}');
+      const total = Object.values(scores).reduce((sum, v) => sum + parseInt(v), 0);
+      let type = '';
+      if (total <= 14) type = '안정형';
+      else if (total <= 19) type = '안정추구형';
+      else if (total <= 24) type = '위험중립형';
+      else if (total <= 29) type = '적극투자형';
+      else type = '공격투자형';
+      document.getElementById('survey-result').textContent = `설문 결과: ${type}`;
 
-      // userId를 포함하여 링크 업데이트
+      // 펀드/예적금 링크에 userId 전달
       document.getElementById('e__25109').href = `개인_펀드.html?userId=${encodeURIComponent(userId)}`;
       document.getElementById('e__25111').href = `개인_예적금.html?userId=${encodeURIComponent(userId)}`;
-      document.getElementById('e__25112').href = `개인_카드.html?userId=${encodeURIComponent(userId)}`;
+
+      // ✅ 신용 점수 예측 요청 (API 경로 및 키 수정됨)
+      fetch(`http://localhost:5000/predict_score?userId=${encodeURIComponent(userId)}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.score !== undefined) {
+            document.getElementById('e__25121').textContent = data.score;
+          } else {
+            document.getElementById('e__25121').textContent = '예측 실패';
+          }
+        })
+        .catch(err => {
+          console.error('API 요청 실패:', err);
+          document.getElementById('e__25121').textContent = '에러 발생';
+        });
     });
   </script>
 </head>
 <body>
   <div id="e__25108">
     <img id="e__25113" src="자료/img.png" alt="로고 이미지" />
-
-    <!-- 로고 텍스트 -->
     <div id="e__25114">iM your man</div>
 
     <!-- 항목명 -->
@@ -36,22 +54,22 @@
     <div id="e__25117">성별</div>
     <div id="e__25118">나이</div>
     <div id="e__25119">등급</div>
-    <div id="e__25116">KCB 신용 점수</div>
 
-    <!-- 값 영역 -->
-    <div id="e__25120"></div> <!-- ID -->
-    <div id="e__25122"></div> <!-- 성별 -->
-    <div id="e__25123"></div> <!-- 나이 -->
-    <div id="e__25124"></div> <!-- 등급 -->
-    <div id="e__25121"></div> <!-- 신용 점수 -->
+    <!-- 값 -->
+    <div id="e__25120"></div>
+    <div id="e__25122"></div>
+    <div id="e__25123"></div>
+    <div id="e__25124"></div>
+
+    <!-- 회색 네모 박스 -->
+    <div id="e__25110">
+      <div class="info-line">KCB 신용 점수: <span id="e__25121">예측 중</span></div>
+      <div class="info-line" id="survey-result">설문 결과:</div>
+    </div>
 
     <!-- 버튼 -->
-    <a href="개인_펀드.html" id="e__25109"><div id="e__25125">펀드</div></a>
-    <a href="개인_예적금.html" id="e__25111"><div id="e__25126">예적금</div></a>
-    <a href="개인_카드.html" id="e__25112"><div id="e__25127">카드</div></a>
-
-    <!-- 신용 점수 회색 배경 박스 -->
-    <div id="e__25110"></div>
+    <a href="#" id="e__25109"><div id="e__25125">펀드</div></a>
+    <a href="#" id="e__25111"><div id="e__25126">예적금</div></a>
   </div>
 </body>
 </html>

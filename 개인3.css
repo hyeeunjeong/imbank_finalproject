@@ -1,22 +1,10 @@
-/* 기본 여백 제거 + 스크롤 방지 */
 html, body {
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-/* 공통 색상 */
-.text-white { color: #FFFFFF; }
-.bg-white { background-color: #FFFFFF; }
-.text-black { color: #000000; }
-.bg-black { background-color: #000000; }
-.text-gainsboro { color: #DCDCDC; }
-.bg-gainsboro { background-color: #DCDCDC; }
-.text-lightgreen { color: #90EE90; }
-.bg-lightgreen { background-color: #90EE90; }
-
-/* 전체 컨테이너 */
-#e__142, #e__25108 {
+#e__25108 {
   width: 100vw;
   max-width: 1440px;
   height: 100vh;
@@ -27,7 +15,7 @@ html, body {
   overflow: hidden;
 }
 
-/* 로고 이미지 */
+/* 로고 */
 #e__25113 {
   width: 337px;
   height: 85px;
@@ -36,7 +24,6 @@ html, body {
   right: 0px;
 }
 
-/* 로고 텍스트 */
 #e__25114 {
   position: absolute;
   top: 25px;
@@ -47,7 +34,7 @@ html, body {
   color: #000000;
 }
 
-/* 항목 라벨 텍스트 */
+/* 항목 라벨 */
 #e__25115, #e__25116, #e__25117, #e__25118, #e__25119 {
   position: absolute;
   font-family: Inter, sans-serif;
@@ -58,14 +45,12 @@ html, body {
   z-index: 3;
 }
 
-/* 각 라벨 위치 */
 #e__25115 { top: 180px; left: 140px; } /* ID */
 #e__25117 { top: 250px; left: 130px; } /* 성별 */
 #e__25118 { top: 320px; left: 130px; } /* 나이 */
 #e__25119 { top: 390px; left: 130px; } /* 등급 */
-#e__25116 { top: 200px; right: 320px; } /* 신용 점수 */
 
-/* 값 네모칸 */
+/* 값 박스 */
 #e__25120, #e__25122, #e__25123, #e__25124 {
   border: 2px solid #000000;
   width: 300px;
@@ -81,49 +66,45 @@ html, body {
   z-index: 2;
 }
 
-/* 각 값 박스 위치 */
-#e__25120 { top: 170px; left: 250px; } /* ID */
-#e__25122 { top: 240px; left: 250px; } /* 성별 */
-#e__25123 { top: 310px; left: 250px; } /* 나이 */
-#e__25124 { top: 380px; left: 250px; } /* 등급 */
+#e__25120 { top: 170px; left: 250px; }
+#e__25122 { top: 240px; left: 250px; }
+#e__25123 { top: 310px; left: 250px; }
+#e__25124 { top: 380px; left: 250px; }
 
-/* 신용 점수 회색 박스 안의 검정 테두리 박스 */
-#e__25121 {
-  border: 2px solid #000000;
-  width: 300px;
-  height: 60px;
-  background-color: #E2E3E1;
-  position: absolute;
-  top: 320px;
-  right: 255px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Inter, sans-serif;
-  font-size: 20px;
-  color: #000000;
-  z-index: 2;
-}
-
-/* 회색 배경 박스 (신용점수 영역) */
+/* 회색 박스 */
 #e__25110 {
-  width: 420px;
+  width: 460px;
   height: 280px;
   background-color: #E2E3E1;
   position: absolute;
-  top: 160px;
-  right: 200px;
+  top: 130px;
+  right: 180px;
   border-radius: 50px;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px;
+  box-sizing: border-box;
 }
 
-/* 버튼 박스 스타일 (펀드/예적금/카드) */
-#e__25109, #e__25111, #e__25112 {
+.info-line {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: Inter, sans-serif;
+  color: #000000;
+  text-align: center;
+}
+
+/* 버튼 스타일 */
+#e__25109, #e__25111 {
   width: 220px;
   height: 160px;
   background-color: #82DF7E;
   position: absolute;
-  border-radius: 70px; /* 각지게 */
+  border-radius: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,13 +113,10 @@ html, body {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* 버튼 위치 */
-#e__25109 { top: 500px; left: 160px; }   /* 펀드 */
-#e__25111 { top: 500px; left: 584px; }   /* 예적금 */
-#e__25112 { top: 500px; left: 1008px; }   /* 카드 */
+#e__25109 { top: 500px; left: 250px; }
+#e__25111 { top: 500px; right: 180px; }
 
-/* 버튼 텍스트 */
-#e__25125, #e__25126, #e__25127 {
+#e__25125, #e__25126 {
   font-family: Inter, sans-serif;
   font-weight: 700;
   font-size: 36px;

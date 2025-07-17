@@ -26,7 +26,7 @@
       prevScores.question8 = selectedValue;
       localStorage.setItem('investmentScores', JSON.stringify(prevScores));
 
-      window.location.href = `개인_투자성향_결과.html?userId=${encodeURIComponent(userId)}`;
+      window.location.href = `개인_투자성향9.html?userId=${encodeURIComponent(userId)}`;
     }
   </script>
 </head>
@@ -40,13 +40,12 @@
     </div>
     <div id="e__8351">
       <form id="investmentExperienceForm" onsubmit="event.preventDefault(); goNext();">
-        <div>08. 예상 투자기간(개월)은?</div>
-        <label><input type="radio" name="investmentExperience" value="0" /> 0개월</label>
-        <label><input type="radio" name="investmentExperience" value="1" /> 1~6개월</label>
-        <label><input type="radio" name="investmentExperience" value="2" /> 7~12개월</label>
-        <label><input type="radio" name="investmentExperience" value="3" /> 13~24개월</label>
-        <label><input type="radio" name="investmentExperience" value="4" /> 25~36개월</label>
-        <label><input type="radio" name="investmentExperience" value="5" /> 37개월 이상</label>
+        <div>08. 현재 투자자산에 대한 투자예정기간은 어떻게 되시나요?</div>
+        <label><input type="radio" name="investmentExperience" value="1" /> 1년 미만</label>
+        <label><input type="radio" name="investmentExperience" value="2" /> 1~2년 미만</label>
+        <label><input type="radio" name="investmentExperience" value="3" /> 2~3년 미만</label>
+        <label><input type="radio" name="investmentExperience" value="4" /> 3~5년 미만</label>
+        <label><input type="radio" name="investmentExperience" value="5" /> 5년 이상</label>
         <button type="submit">다음</button>
       </form>
     </div>

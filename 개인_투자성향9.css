@@ -56,7 +56,7 @@ html, body {
   font-weight: 700;
   text-align: left;
   font-size: 28px;
-  line-height: 1.6;
+  line-height: 1.4;
   position: relative;
 }
 
@@ -68,12 +68,10 @@ html, body {
   font-size: 28px;
   display: block;
   margin-bottom: 16px;
-  line-height: 1.8;
-  white-space: nowrap; /* ✅ 줄바꿈 방지 */
+  line-height: 1.6;
+  white-space: normal;
   font-weight: 700;
   font-family: 'Inter', sans-serif;
-  padding-left: 0;        /* ✅ 왼쪽 여백 없애기 */
-  text-indent: 0;         /* ✅ 들여쓰기 제거 */
 }
 
 #investmentExperienceForm button {
